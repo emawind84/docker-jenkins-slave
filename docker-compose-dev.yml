@@ -2,9 +2,8 @@ version: "3"
 
 services:
   jenkins-slave:
-    image: ${REGISTRY_URL}/jenkins-slave
+    build: jenkins-slave
     volumes: 
     - ${JENKINS_HOME}:/home/slave/jenkins
     ports:
       - "1222:22"
-    restart: "unless-stopped"
